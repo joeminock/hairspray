@@ -3,7 +3,7 @@ class StylistsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def index
-    @stylists = current_user.stylists
+    @stylist = Stylist
   end
 
   def show
@@ -11,11 +11,11 @@ class StylistsController < ApplicationController
   end
 
   def new
-    @stylist = current_user.stylists.build
+    @stylist = Stylist.new
   end
 
   def create
-    @stylist = current_user.stylists.build(stylist_params)
+    @stylist = current_user.stylist(stylist_params)
 
     if @stylist.save
       redirect_to @stylist, notice: "Saved..."
@@ -44,5 +44,5 @@ class StylistsController < ApplicationController
       params.require(:stylist).permit(:stylist_name, :about_the_stylist, :services_provided, :address, :works_in_salon, :works_in_office, :works_in_home)
       
     end
-  end  
+  
 end

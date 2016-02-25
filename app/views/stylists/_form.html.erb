@@ -1,0 +1,36 @@
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			Create your Stylist Profile!!!
+		</div>
+		<div class="panel-body">
+			<div class="container">
+
+				<%= form_for @stylist do |f| %>
+
+					<div class="row">
+						<div class="form-group">
+
+							<label>Stylist Name</label>
+							<%= f.text_field :stylist_name, placeholder: "Stylist Name", class: "form-control" %>
+			
+						</div>
+						<div class="form-group">
+
+							<label>About The Stylist</label>
+							<%= f.text_area :about_the_stylist, rows: 10, placeholder: "Tell the client about you. Include Experience, Awards, Special Training, Preferences, Strengths (coarse hair, color, women's or men's styles, etc), Hobbies, and More...", class: "form-control" %>
+			
+						</div>
+						<div class="form-group">
+
+							<label>Primary Services Provided</label>
+							<%= f.text_field :services_provided, placeholder: "Stylist Name", class: "form-control" %>
+			
+						</div>
+					</div>
+
+				<% end %>
+
+			</div>	
+		</div>
+	</div>
