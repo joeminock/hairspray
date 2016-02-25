@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stylist_name: MyString
+  about_the_stylist: MyText
+  services_provided: MyString
+  address: MyString
+  works_in_salon: false
+  works_in_office: false
+  works_in_home: false
+
+two:
+  stylist_name: MyString
+  about_the_stylist: MyText
+  services_provided: MyString
+  address: MyString
+  works_in_salon: false
+  works_in_office: false
+  works_in_home: false

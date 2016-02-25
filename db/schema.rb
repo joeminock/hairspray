@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218041545) do
+ActiveRecord::Schema.define(version: 20160225042358) do
+
+  create_table "stylists", force: :cascade do |t|
+    t.string   "stylist_name"
+    t.text     "about_the_stylist"
+    t.string   "services_provided"
+    t.string   "address"
+    t.boolean  "works_in_salon"
+    t.boolean  "works_in_office"
+    t.boolean  "works_in_home"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
