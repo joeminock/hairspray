@@ -1,5 +1,5 @@
 class AddUserAssociationToStylist < ActiveRecord::Migration
   def change
-  	add_column :stylists, :user, :references
+  	add_reference :stylists, :user
   end
 end
