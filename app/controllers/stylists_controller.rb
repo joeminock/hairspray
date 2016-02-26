@@ -3,7 +3,7 @@ class StylistsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def index
-    @stylist = Stylist
+    @stylists = current_user.stylists
   end
 
   def show
@@ -11,11 +11,11 @@ class StylistsController < ApplicationController
   end
 
   def new
-    @stylist = Stylist.new
+    @stylist = current_user.stylists.build
   end
 
   def create
-    @stylist = current_user.stylist(stylist_params)
+    @stylist = current_user.stylists.build(stylist_params)
 
     if @stylist.save
       redirect_to @stylist, notice: "Saved..."
