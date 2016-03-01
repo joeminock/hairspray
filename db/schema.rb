@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301034115) do
+ActiveRecord::Schema.define(version: 20160301173319) do
 
   create_table "photos", force: :cascade do |t|
     t.integer  "stylist_id"
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 20160301034115) do
     t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "primary_title"
+    t.string   "salon_name"
+    t.text     "short_intro"
+    t.string   "salon_phone"
+    t.string   "facebook_link"
+    t.string   "twitter_link"
+    t.string   "instagram_link"
+    t.string   "snapchat_link"
+    t.string   "email_link"
+    t.string   "website_link"
   end
 
   create_table "users", force: :cascade do |t|
