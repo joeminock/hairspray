@@ -30,6 +30,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #devise
 gem 'devise', '~> 3.5', '>= 3.5.6'
 
+#IMAGE MANAGEMENT
+gem 'paperclip'
+
 # PRODUCTION ENV
 group :production do 
 	# Postgres for heroku production environment
