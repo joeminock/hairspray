@@ -35,6 +35,9 @@ gem 'paperclip'
 
 gem 'geocoder'
 
+#JQUERY UI
+gem 'jquery-ui-rails'
+
 # PRODUCTION ENV
 group :production do 
 	# Postgres for heroku production environment
