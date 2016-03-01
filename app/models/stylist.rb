@@ -11,6 +11,7 @@ class Stylist < ActiveRecord::Base
 	validates :short_intro, presence: true, length: {maximum: 140}
 	validates :about_the_stylist, presence: true, length: {maximum: 500}
 	validates :services_provided, presence: true
+	validates :salon_name, presence: true
 	validates :salon_phone, presence: true
 	validates :address, presence: true
 

@@ -16,6 +16,18 @@
 					</div>
 					<div class="form-group">
 
+						<label>Primary Title</label>
+						<%= f.text_field :primary_title, placeholder: "Stylist, Esthetician, Colorist, Senior Stylist, Makeup Artist...", class: "form-control" %>
+		
+					</div>
+					<div class="form-group">
+
+						<label>Short Intro / Claim to Fame / Fun Fact</label>
+						<%= f.text_field :short_intro, placeholder: "Why are you awesome (in 140 characters or less)", class: "form-control" %>
+		
+					</div>
+					<div class="form-group">
+
 						<label>About The Stylist</label>
 						<%= f.text_area :about_the_stylist, rows: 10, placeholder: "Tell the client about you. Include Experience, Awards, Special Training, Preferences, Strengths (coarse hair, color, women's or men's styles, etc), Hobbies, and More...", class: "form-control" %>
 		
@@ -23,21 +35,32 @@
 					<div class="form-group">
 
 						<label>Primary Services Provided</label>
-						<%= f.text_field :services_provided, placeholder: "Services Provided", class: "form-control" %>
+						<%= f.text_field :services_provided, placeholder: "Cut, Color, Cut & Color, Makeup, Waxing, etc...", class: "form-control" %>
 		
 					</div>
 
 					<hr>
+					<div class="form-group">
 
+						<label>Salon Name</label>
+						<%= f.text_field :salon_name, placeholder: "Stylist, Esthetician, Colorist, Senior Stylist, Makeup Artist...", class: "form-control" %>
+		
+					</div>
+					<div class="form-group">
+
+						<label>Salon Phone Number</label>
+						<%= f.text_field :salon_phone, placeholder: "Stylist, Esthetician, Colorist, Senior Stylist, Makeup Artist...", class: "form-control" %>
+		
+					</div>
 					<div class="form-group">
 
 						<label>Address</label>
-						<%= f.text_field :address, placeholder: "Primary Salon Address", class: "form-control" %>
+						<%= f.text_field :address, placeholder: "Salon Address", class: "form-control" %>
 		
 					</div>
 				</div>
 
-				<div class="row">
+				<!--<div class="row"> Not Using this section right now. To be re-added later 
 					<div class="col-md-4">
 						<div class="form-group">
 							<%= f.check_box :works_in_salon %> Available In The Salon
@@ -49,13 +72,13 @@
 							<%= f.check_box :works_in_home %> Available For In-Home Visits
 						</div>
 					</div>
-				</div>
+				</div>-->
 
 				<div class="row">
 					<div class="col-md-4">
 						<div class="form-group">
 							<span class="btn btn-default btn-file">
-								<i class= "fa fa-cloud-upload fa-lg"></i> Upload Photos
+								<i class= "fa fa-cloud-upload fa-lg"></i> Upload Portfolio Photos
 								<%= file_field_tag "images[]", type: :file, multiple: true %>
 							</span>
 						</div>	

@@ -5,11 +5,13 @@
 		<!-- Image -->
 		<div class="row">
 			<div class="col-md-3">
+				<h6><%= @stylist.primary_title %></h6>
 				<h1><%= @stylist.stylist_name %></h1>
-				<h3>Stylist Intro Here</h3>
+				<h3>at <%= @stylist.salon_name %></h3>
+				<h4><%= @stylist.short_intro %></h4>
 				<p><%= @stylist.about_the_stylist %></p>
 				<p><%= @stylist.services_provided %></p>
-				<%= @stylist.address %>
+				
 				<br>
 				<hr>
 				<!-- Appointment Form -->
@@ -53,6 +55,11 @@
 		<br>
 		<hr>
 		<!-- Google Map -->
+		<div class="row">
+			<div class="col-md-12">
+				<h2><%= @stylist.salon_name %> | <%= @stylist.address %> - <%= @stylist.salon_phone %></h2>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-md-12">
 				

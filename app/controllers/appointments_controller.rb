@@ -4,7 +4,7 @@ class AppointmentsController < ApplicationController
 	def create
 		@appointment = current_user.appointments.create(appointment_params)
 
-		redirect_to @appointment.stylist, notice: "Your Appointment Has Been Created!!!"
+		redirect_to @appointment.stylist, notice: "Your reservation has been created..."
 	end
 
 	private

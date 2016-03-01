@@ -2,17 +2,17 @@
 	<%= f.text_field :start_date %>
 	<%= f.text_field :end_date %>
 	<br>
-	<%= f.submit "Book Now", class: "btn btn-primary" %>
+	<%= f.submit "Book Me Now", class: "btn btn-primary" %>
 <% end %>
 
 <script>
 	$(function() {
 
 		$('#appointment_start_date').datepicker({
-			dateFormat: 'dd-mm-yy'
+			dateFormat: 'mm-dd-yy'
 		});
 		$('#appointment_end_date').datepicker({
-			dateFormat: 'dd-mm-yy'
+			dateFormat: 'mm-dd-yy'
 		});
 
 	});
