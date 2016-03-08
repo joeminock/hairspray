@@ -5,19 +5,17 @@
 		<!-- Image -->
 		<div class="row">
 			<div class="col-md-3">
-				<h6><%= @stylist.primary_title %></h6>
-				<h1><%= @stylist.stylist_name %></h1>
-				<h3>at <%= @stylist.salon_name %></h3>
-				<h4><%= @stylist.short_intro %></h4>
-				<p><%= @stylist.about_the_stylist %></p>
-				<p><%= @stylist.services_provided %></p>
+				<p class="stylist_title"><%= @stylist.primary_title %></p>
+				<h1 class="stylist_name"><%= @stylist.stylist_name %></h1>
+				<h3 class="salon_name">at <%= @stylist.salon_name %></h3>
+				<h4 class="stylist"><%= @stylist.short_intro %></h4>
+				<p class="normal"><%= @stylist.about_the_stylist %></p>
 				
-				<br>
-				<hr>
 				<!-- Appointment Form -->
 				<%= render 'appointments/form' %>
 
 			</div>
+
 			<div class="col-md-9">
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				  
@@ -51,6 +49,12 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="row">
+				<div class="col-md-12">
+					<h4>Services: <%= @stylist.services_provided %></h4>
+				</div>	
+			</div>
 
 		<br>
 		<hr>

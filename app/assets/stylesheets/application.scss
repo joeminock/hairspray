@@ -219,7 +219,40 @@ h6 {
     }
 }
 
+/* STYLIST PROFILE PAGE */
+
+.stylist_title {
+  font-size: 12px;
+}
+
+.stylist_name {
+  font-size: 32px;
+  font-weight: strong;
+  margin-top: -17px;
+
+}
+
+.salon_name {
+  font-size: 22px;
+  margin-top: -15px;
+  color: #999;
+
+}
+
+
 /* **********CONTENT********** */
+
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.normal {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* **********FOOTER********** */
 
 footer {
     padding: 50px 0;
@@ -406,6 +439,17 @@ input[type="checkbox"]:checked:before {
 
 .panel-heading.preview img{  
   width: 100%;
+}
+
+/* CAROUSEL */
+
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    display: block;
+    max-width: 100%;
+    max-height: 600px;
+    /* height: auto; */
+    line-height: 1;
 }
 
 
