@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     resources :appointments, only: [:create]
   end
 
+  get '/preload' => 'reservations#preload'
+
 end

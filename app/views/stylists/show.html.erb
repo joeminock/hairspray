@@ -4,19 +4,21 @@
 			
 			<!-- Image -->
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-4">
 					<p class="stylist_title"><%= @stylist.primary_title %></p>
 					<h1 class="stylist_name"><%= @stylist.stylist_name %></h1>
 					<h3 class="salon_name">at <%= @stylist.salon_name %></h3>
 					<h4 class="stylist"><%= @stylist.short_intro %></h4>
 					<p class="normal"><%= @stylist.about_the_stylist %></p>
-					
+					<hr>
+					<h4>Services: <%= @stylist.services_provided %></h4>
+					<hr>
 					<!-- Appointment Form -->
 					<%= render 'appointments/form' %>
 
 				</div>
 
-				<div class="col-md-9">
+				<div class="col-md-8">
 					<div id="myCarousel" class="carousel slide" data-ride="carousel">
 					  
 						<% if @photos %>
@@ -49,13 +51,6 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="row">
-					<div class="col-md-12">
-						<h4>Services: <%= @stylist.services_provided %></h4>
-					</div>	
-				</div>
-
 			<br>
 			<hr>
 			<!-- Google Map -->

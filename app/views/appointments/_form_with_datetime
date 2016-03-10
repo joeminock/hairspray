@@ -1,0 +1,52 @@
+<%= form_for([@stylist, @stylist.appointments.new]) do |f| %>
+	<div class="row">
+		<div class="col-md-6">
+			<label>Appointment Start Time</label>
+			<%= f.text_field :start_date, readonly: 'true', placeholder: 'Start Time', class: 'form-control' %>
+		</div>
+		<div class="col-md-6">
+			<label>Appointment End Time</label>
+			<%= f.text_field :end_date, readonly: 'true', placeholder: 'End Time', disabled: 'true', class: 'form-control' %>
+		</div>
+	</div>
+	<br>
+	<%= f.submit "Book Me Now", class: "btn btn-primary" %>
+<% end %>
+
+<script>
+	$(function() {
+
+		unavailableDates = [];
+
+		$.ajax({
+			url: '/preload',
+			data: {'stylist_id: <%= @stylist.id %>'},
+			dataType: 'json',
+			success: function(data) {
+
+				$.each(data, function(arrID, arrValue) {
+					for(var d = new Date(arrValue.start_date); d <= new Date(arrValue.end_date); d.setDate(d.getDate()
+						+1)) {
+						console.log(d);
+					}
+				})
+			}
+		})
+
+		// when the document has loaded
+        // attach the datetimepicker
+
+		$('#appointment_start_date').datetimepicker({
+			dateFormat: 'mm-dd-yy',
+			timeFormat: 'hh tt',
+			hourMin: 8,
+      		hourMax: 17
+		});
+		$('#appointment_end_date').datetimepicker({
+			dateFormat: 'mm-dd-yy',
+			timeFormat: 'hh tt'
+		});
+
+	});
+</script>
+</script>
