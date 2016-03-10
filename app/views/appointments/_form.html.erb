@@ -9,6 +9,8 @@
 			<%= f.text_field :end_date, readonly: 'true', placeholder: 'End Time', disabled: 'true', class: 'form-control' %>
 		</div>
 	</div>
+
+	<%= f.hidden_field :stylist_id, value: @stylist.id %>
 	<br>
 	<%= f.submit "Book Me Now", class: "btn btn-primary" %>
 <% end %>
@@ -39,7 +41,7 @@
 				$('#appointment_start_date').datepicker({
 					dateFormat: 'dd-mm-yy',
 					minDate: 0,
-					maxDate: '2m',
+					maxDate: '1m',
 					beforeShowDay: unavailable,
 					onSelect: function(selected) {
 						$('#appointment_end_date').datepicker("option", "minDate", selected);
@@ -50,7 +52,7 @@
 				$('#appointment_end_date').datepicker({
 					dateFormat: 'dd-mm-yy',
 					minDate: 0,
-					maxDate: '2m',
+					maxDate: '1m',
 					beforeShowDay: unavailable,
 					onSelect: function(selected) {
 						$('#appointment_start_date').datepicker("option", "maxDate", selected);

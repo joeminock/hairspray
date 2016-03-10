@@ -99,7 +99,7 @@
 			<!-- Close by Rooms -->
 			<h3>More Great Stylists Near by</h3>
 			<div class="row">
-				<% for stylist in @stylist.nearbys(10) %>
+				<% for stylist in @stylist.nearbys(10).max(6) %>
 					
 					<div class="col-md-4">
 						<div class="panel panel-default">
