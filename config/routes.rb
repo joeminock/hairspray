@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   end
 
   get '/preload' => 'appointments#preload'
-
+  get '/preview' => 'appointments#preview'
 end

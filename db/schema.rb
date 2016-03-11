@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301183421) do
+ActiveRecord::Schema.define(version: 20160311163136) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer  "user_id"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160301183421) do
     t.string   "snapchat_link"
     t.string   "email_link"
     t.string   "website_link"
+    t.integer  "price"
   end
 
   create_table "users", force: :cascade do |t|

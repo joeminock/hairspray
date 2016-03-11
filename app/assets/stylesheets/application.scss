@@ -383,6 +383,10 @@ p.copyright {
     display: block;
 }
 
+.wide {
+  width: 100%;
+}
+
 label {
   color: #565a5c;
   font-size: 1.1em;
@@ -490,6 +494,14 @@ input[type="checkbox"]:checked:before {
 
 .ui-timepicker-rtl dl dd { 
   margin: 0 65px 10px 10px; 
+}
+
+/* Appointment Table */
+
+.appointment-table td {
+  width: 100%;
+  border: 1px solid #dce0e0;
+  padding: 10px;
 }
 
 
