@@ -26,8 +26,8 @@ class AppointmentsController < ApplicationController
 		redirect_to @appointment.stylist, notice: "Your appointment has been created..."
 	end
 
-	def bookings
-		@bookings = current_user.appointments
+	def my_appointments
+		@my_appointments = current_user.appointments
 	end
 
 	private
