@@ -1,4 +1,12 @@
 <%= form_for([@stylist, @stylist.appointments.new]) do |f| %>
+	
+	<div class="row">
+		<div class="col-md-12 price_tag">
+			<span>Normal Hourly Rate</span>
+			<span class="pull-right">$<%= @stylist.price %></span>
+		</div>
+	</div>	
+
 	<div class="row">
 		<div class="col-md-6">
 			<label>Appointment Start Time</label>
@@ -87,6 +95,7 @@
 
 								} else {
 
+									$('#message').text("This appointment is available.");
 									$('#preview').show();
 									$('#btn_book').attr('disabled', false);
 
