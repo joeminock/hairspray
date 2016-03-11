@@ -26,6 +26,10 @@ class AppointmentsController < ApplicationController
 		redirect_to @appointment.stylist, notice: "Your appointment has been created..."
 	end
 
+	def bookings
+		@bookings = current_user.appointments
+	end
+
 	private
 		def is_conflict(start_date, end_date)
 			stylist = Stylist.find(params[:stylist_id])
