@@ -30,6 +30,10 @@ class AppointmentsController < ApplicationController
 		@my_appointments = current_user.appointments
 	end
 
+	def client_appointments
+		@stylists = current_user.stylists
+	end
+
 	private
 		def is_conflict(start_date, end_date)
 			stylist = Stylist.find(params[:stylist_id])
