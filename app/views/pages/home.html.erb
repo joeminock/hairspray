@@ -9,14 +9,23 @@
                         <h1><i class="glyphicon glyphicon-scissors"></i> GoToStylist</h1>
                         <h3>Book Hair Styles On Your Schedule...</h3>
                         <hr class="intro-divider">
+
                         <div class="col-lg-6 col-lg-offset-3">
-                            <div class="input-group input-group-lg">
-                                <input type="text" class="form-control" placeholder="City, State">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default red" type="button">Search</button>
-                                </span>
-                            </div><!-- /input-group -->
-                        </div><!-- /.col-lg-6 -->
+                        <%= form_tag search_path, method: :get do %>
+                        
+                            <div class="input-group input-group-lg">     
+                                
+                                    <%= text_field_tag :search, params[:search], placeholder: "Where are you?", class: "form-control" %>
+                                
+                                    <%= text_field_tag :start_time, params[:start_time], placeholder: "Start Time", class: "form-control" %>
+                                
+                                    <%= text_field_tag :end_time, params[:end_time], placeholder: "End Time", class: "form-control" %>
+                                
+                                    <%= submit_tag "Search", class: "btn btn-primary red" %>
+                                </div>
+                             </div>
+                        <% end %>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -26,10 +35,36 @@
 
     </div>
     <!-- /.intro-header -->
-    <% if(!user_signed_in?) %>
+    
     <!-- Page Content -->
 
 	<a  name="services"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <h3>Featured Stylists</h3>
+            <div class="row">
+                <% @stylists.each do |stylist| %>
+
+                    <div class="col-sm-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading preview">
+                                <%= image_tag stylist.photos[0].image.url(:medium) if stylist.photos.length > 0 %>
+                            </div>
+                            <div class="panel-body">
+                                <%= link_to stylist.stylist_name, stylist %>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+<% if(!user_signed_in?) %>
     <div class="content-section-a">
 
         <div class="container">
@@ -127,6 +162,31 @@
     </div>
     <!-- /.banner -->
     <% end %>
+
+    <script>
+    $(function() {
+        $("#start_time").datepicker({
+            dateFormat: 'dd-mm-yy',
+            minDate: 0,
+            maxDate: '3m',
+            onSelect: function(selected) {
+                $('#end_time').datepicker("option", "minDate", selected);
+                $('#end_time').attr('disabled', false);
+            }
+        });
+
+        $("#end_time").datepicker({
+            dateFormat: 'dd-mm-yy',
+            minDate: 0,
+            maxDate: '3m',
+            onSelect: function(selected) {
+                $('#start_time').datepicker("option", "maxDate", selected);
+            }
+        });
+    })
+
+
+</script>
     
 
    

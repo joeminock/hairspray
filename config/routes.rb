@@ -12,8 +12,14 @@ Rails.application.routes.draw do
     resources :appointments, only: [:create]
   end
 
+  #appointments Data
   get '/preload' => 'appointments#preload'
   get '/preview' => 'appointments#preview'
+  
+  #Appointments Views
   get '/my_appointments' =>'appointments#my_appointments'
   get '/client_appointments' =>'appointments#client_appointments'
+
+  #Search
+  get '/search' => 'pages#search'
  end

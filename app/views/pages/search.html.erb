@@ -1,0 +1,82 @@
+<div class="container">
+<div id="wrapper">
+	
+	<div id="sidebar">
+		<div id="widget" class="sticky">
+			
+		</div>
+	</div>
+
+	<div id="article">
+		
+		<div class="row devise">
+			<%= search_form_for @search, url: search_path do |f| %>
+				
+				<div class="row">
+					<div class="col-md-3">
+						<%= text_field_tag :start_time, params[:start_time], placeholder: "Start Time", class: "form-control" %>
+					</div>
+					<div class="col-md-3">
+						<%= text_field_tag :end_time, params[:end_time], placeholder: "End Time", class: "form-control" %>
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :price_gteq, placeholder: "Min Price", class: "form-control" %>
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :price_lteq, placeholder: "Max Price", class: "form-control" %>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<%= f.submit "Search", class: "btn btn-primary" %>
+				</div>
+
+			<% end %>
+
+			<hr>
+
+			<div class="row">
+				<% @arrStylists.each do |stylist| %>
+					
+					<div class="col-md-4">
+						<div class="panel panel-default">
+							<div class="panel-heading preview">
+								<%= image_tag stylist.photos[0].image.url(:medium) if stylist.photos.length > 0 %>
+							</div>
+							<div class="panel-body">
+								<%= link_to stylist.stylist_name, stylist %>
+							</div>
+						</div>
+					</div>
+
+				<% end %>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+</div>
+
+<script>
+	$(function() {
+		$("#start_time").datepicker({
+			dateFormat: 'dd-mm-yy',
+			minDate: 0,
+			maxDate: '3m',
+			onSelect: function(selected) {
+				$('#end_time').datepicker("option", "minDate", selected);
+				$('#end_time').attr('disabled', false);
+			}
+		});
+
+		$("#end_time").datepicker({
+			dateFormat: 'dd-mm-yy',
+			minDate: 0,
+			maxDate: '3m',
+			onSelect: function(selected) {
+				$('#start_time').datepicker("option", "maxDate", selected);
+			}
+		});
+	})
+</script>

@@ -38,6 +38,9 @@ gem 'geocoder'
 #JQUERY UI
 gem 'jquery-ui-rails'
 
+#SEARCH
+gem 'ransack'
+
 # PRODUCTION ENV
 group :production do 
 	# Postgres for heroku production environment
