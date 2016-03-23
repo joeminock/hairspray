@@ -14,5 +14,6 @@ class Stylist < ActiveRecord::Base
 	validates :salon_name, presence: true
 	validates :salon_phone, presence: true
 	validates :address, presence: true
+	validates :price, presence: true
 
 end

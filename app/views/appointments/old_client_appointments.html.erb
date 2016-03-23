@@ -20,13 +20,18 @@
 							<div class="col-md-3">
 								<%= appointment.start_date.strftime('%c') %>
 							</div>	
-							<div class="col-md-6">
+							<div class="col-md-4">
+								<%= link_to stylist_path(appointment.stylist) do %>
+									<%= appointment.stylist.stylist_name %> at <%= appointment.stylist.salon_name %>
+								<% end %>
+							</div>	
+							<div class="col-md-4">
 								<%= link_to user_path(appointment.user) do %>
 									<%= appointment.user.fullname %> - 
 									<%= appointment.user.phone_number %>
 								<% end %>	
 							</div>	
-							<div class="col-md-3 right">
+							<div class="col-md-2 right">
 								<h4>appointment.total to go here %></h4>
 							</div>	
 						</div>

@@ -241,6 +241,9 @@ h6 {
 
 }
 
+/* USER INFO PAGE... /users/x */
+
+
 
 /* **********CONTENT********** */
 
@@ -253,6 +256,7 @@ h6 {
     font-size: 14px;
     font-weight: 400;
 }
+
 
 /* **********FOOTER********** */
 
@@ -331,6 +335,11 @@ p.copyright {
   width: 100%;
 }
 
+.userinfo {
+  margin-left: -45px;
+  list-style: none;
+}
+
 /* BUTTONS and INPUTS */
 
 .btn-primary.btn {
@@ -381,6 +390,13 @@ p.copyright {
     background: white;
     cursor: inherit;
     display: block;
+}
+
+.red {
+  background-color: #ff5a5f;
+  border-color: #ff5a5f;
+  border-bottom-color: #e00007;
+  color: #fff;
 }
 
 .wide {
