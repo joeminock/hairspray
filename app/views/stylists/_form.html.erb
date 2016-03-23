@@ -80,6 +80,12 @@
 
 				<div id="photos"><%= render 'photos/list' %></div>		
 
+				<div class="row">
+					<div class="form-group">
+						<%= f.check_box :active %> Active
+					</div>
+				</div>
+
 				<div class="actions">
 					<%= f.submit "Save", class: "btn btn-primary" %>
 				</div>
