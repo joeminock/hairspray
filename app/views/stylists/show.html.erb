@@ -107,7 +107,13 @@
 								<%= image_tag stylist.photos[0].image.url(:medium) %>
 							</div>
 							<div class="panel-body">
-								<%= link_to stylist.stylist_name, stylist %><br>
+                                <%= link_to stylist_path(stylist) do %>
+                                    <%= stylist.stylist_name %>
+                                    at
+                                    <%= stylist.salon_name %>
+
+                                <% end %>
+								<br>
 								(<%= stylist.distance.round(2) %> miles away)
 							</div>
 						</div>
