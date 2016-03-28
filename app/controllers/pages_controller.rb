@@ -18,7 +18,7 @@ class PagesController < ApplicationController
     end
 
     @search = @stylists_address.ransack(params[:q])
-    @stylists = @search.result
+    @stylists = @search.result.shuffle
 
     @arrStylists = @stylists.to_a
 
