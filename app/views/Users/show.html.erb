@@ -4,20 +4,17 @@
 			<div class="center">
 				<%= image_tag avatar_url(@user), class: "avatar-full" %>
 			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">Information</div>	
+			<div class="panel panel-default">	
 				<div class="panel-body">
+					<h2><%= @user.fullname %></h2>
 					<ul>
 						<li class="userinfo">Phone: <%= @user.phone_number %></li>
-						<li class="userinfo">Email: <%= @user.email %></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 
 		<div class="col-md-9">
-			<h2><%= @user.fullname %></h2>
-
 			<div class="description row-space-3">
 				<%= @user.description %>
 			</div>
