@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-  	@stylists = Stylist.all
+  	@stylists = Stylist.all.shuffle
   end
 
   def search
