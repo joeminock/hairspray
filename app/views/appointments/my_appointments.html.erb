@@ -22,9 +22,11 @@
 						<div class="col-md-6">
 							<%= link_to stylist_path(my_appointment.stylist) do %>
 								<%= my_appointment.stylist.stylist_name %>
-							<% end %>
+							
 							at
-							<span><%= my_appointment.stylist.salon_name %>  <%= my_appointment.stylist.salon_phone %></span>
+							<%= my_appointment.stylist.salon_name %> - <%= my_appointment.stylist.salon_phone %>
+
+							<% end %>
 						</div>	
 						<div class="col-md-3 right">
 							<h4>my appointment total to go here</h4>

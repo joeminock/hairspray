@@ -12,7 +12,36 @@
 		<div class="row devise">
 			<%= search_form_for @search, url: search_path do |f| %>
 				
+				
 				<div class="row">
+				<div class="col-sm-12"><h3>Search Results</h3></div>
+				<% @arrStylists.each do |stylist| %>
+					
+					<div class="col-md-4">
+						<div class="panel panel-default">
+							<div class="panel-heading preview">
+								<%= image_tag stylist.photos[0].image.url(:medium) if stylist.photos.length > 0 %>
+							</div>
+							<div class="panel-body">
+								<%= link_to stylist_path(stylist) do %>
+									<%= stylist.stylist_name %>
+									at
+									<%= stylist.salon_name %>
+
+								<% end %>
+							</div>
+
+							
+						</div>
+					</div>
+
+				<% end %>
+				</div>
+
+				<hr>
+
+				<div class="row">
+					<div class="col-sm-12"><h4>Refine Your Search</h4></div>
 					<div class="col-md-3">
 						<%= text_field_tag :start_time, params[:start_time], placeholder: "Start Time", class: "form-control" %>
 					</div>
@@ -32,25 +61,7 @@
 				</div>
 
 			<% end %>
-
-			<hr>
-
-			<div class="row">
-				<% @arrStylists.each do |stylist| %>
-					
-					<div class="col-md-4">
-						<div class="panel panel-default">
-							<div class="panel-heading preview">
-								<%= image_tag stylist.photos[0].image.url(:medium) if stylist.photos.length > 0 %>
-							</div>
-							<div class="panel-body">
-								<%= link_to stylist.stylist_name, stylist %>
-							</div>
-						</div>
-					</div>
-
-				<% end %>
-			</div>
+			
 		</div>
 
 	</div>
