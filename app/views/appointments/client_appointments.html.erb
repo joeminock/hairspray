@@ -18,7 +18,7 @@
 					<% stylist.appointments.each do |appointment| %>
 						<div class="row">
 							<div class="col-md-3">
-								<%= appointment.start_date.strftime('%c') %>
+								<%= appointment.start_date.strftime('%B %d, %Y %l:%M %P') %>
 							</div>	
 							<div class="col-md-6">
 								<%= link_to user_path(appointment.user) do %>
