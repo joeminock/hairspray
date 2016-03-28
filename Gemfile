@@ -41,6 +41,9 @@ gem 'jquery-ui-rails'
 #SEARCH
 gem 'ransack'
 
+#AWS IMAGE STORE
+gem 'aws-sdk', '~> 1'
+
 # PRODUCTION ENV
 group :production do 
 	# Postgres for heroku production environment

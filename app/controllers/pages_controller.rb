@@ -44,4 +44,22 @@ class PagesController < ApplicationController
       end
     end
   end
+
+  def about
+  end
+
+  def media
+  end
+
+  def jobs
+  end
+
+  def contact
+  end
+
+  def legal
+  end
+
+  def privacy
+  end
 end

@@ -22,4 +22,12 @@ Rails.application.routes.draw do
 
   #Search
   get '/search' => 'pages#search'
+
+  #Pages
+  get '/about' => 'pages#about_us'
+  get '/media' => 'pages#media'
+  get '/jobs' => 'pages#jobs'
+  get '/contact' => 'pages#contact'
+  get '/legal' => 'pages#legal'
+  get '/privacy' => 'pages#privacy'
  end
