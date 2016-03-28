@@ -8,62 +8,78 @@
 			<%= form_for @stylist, :html => { multipart: true } do |f| %>
 
 				<div class="row">
+					
 					<div class="form-group">
 
 						<label>Stylist Name</label>
 						<%= f.text_field :stylist_name, placeholder: "Stylist Name", class: "form-control" %>
 		
 					</div>
+					
+
+					
 					<div class="form-group">
 
 						<label>Primary Title</label>
-						<%= f.text_field :primary_title, placeholder: "Stylist, Esthetician, Colorist, Senior Stylist, Makeup Artist...", class: "form-control" %>
+							<%= f.select :primary_title, [["Stylist","Stylist"], ["Esthetician","Esthetician"], ["Colorist","Colorist"], ["Makeup Artist","Makeup Artist"], ["Nail Artist","Nail Artist"]],prompt: "Select...", class: "form-control" %>
 		
 					</div>
+					
+					
 					<div class="form-group">
 
 						<label>Short Intro / Claim to Fame / Fun Fact</label>
 						<%= f.text_field :short_intro, placeholder: "Why are you awesome (in 140 characters or less)", class: "form-control" %>
 		
 					</div>
+					
+					
 					<div class="form-group">
 
 						<label>About The Stylist</label>
 						<%= f.text_area :about_the_stylist, rows: 10, placeholder: "Tell the client about you. Include Experience, Awards, Special Training, Preferences, Strengths (coarse hair, color, women's or men's styles, etc), Hobbies, and More...", class: "form-control" %>
 		
 					</div>
-					<div class="form-group">
+					
+					
+					<div class="form-group select">
 
 						<label>Primary Services Provided</label>
 						<%= f.text_field :services_provided, placeholder: "Cut, Color, Cut & Color, Makeup, Waxing, etc...", class: "form-control" %>
 		
 					</div>
 
-					<div class="form-group">
+					
+						<div class="form-group">
 
 						<label>Normal Hourly Rate</label>
 						<%= f.text_field :price, placeholder: "45 - Number only, no dollar sign", class: "form-control" %>
 		
+						</div>
 					</div>
 
 					<hr>
+
+					
 					<div class="form-group">
 
 						<label>Salon Name</label>
 						<%= f.text_field :salon_name, placeholder: "Salon Name", class: "form-control" %>
 		
 					</div>
+					
 					<div class="form-group">
 
 						<label>Salon Phone Number</label>
 						<%= f.text_field :salon_phone, placeholder: "Salon Phone Number", class: "form-control" %>
 		
 					</div>
+
 					<div class="form-group">
 
-						<label>Address</label>
+						<label>Salon Address</label>
 						<%= f.text_field :address, placeholder: "Salon Address", class: "form-control" %>
-		
+	
 					</div>
 				</div>
 
