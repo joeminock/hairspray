@@ -10,14 +10,14 @@
 		<div class="col-md-9">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				My Appointments
+				<h4>My Appointments</h4>
 			</div>
 			<div class="panel-body">
 				
 				<% @my_appointments.each do |my_appointment| %>
 					<div class="row">
 						<div class="col-md-3">
-							<%= my_appointment.start_date.strftime('%B %d, %Y %l:%M %P') %>
+							<%= my_appointment.start_date.strftime('%A, %B %d, %Y %l:%M %P') %>
 						</div>	
 						<div class="col-md-6">
 							<%= link_to stylist_path(my_appointment.stylist) do %>

@@ -27,7 +27,7 @@ class AppointmentsController < ApplicationController
 	end
 
 	def my_appointments
-		@my_appointments = current_user.appointments
+		@my_appointments = current_user.appointments.order(:start_date).reverse
 	end
 
 	def client_appointments

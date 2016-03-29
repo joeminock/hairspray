@@ -10,15 +10,15 @@
 		<div class="col-md-9">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				Client Appointments
+				<h4>Client Appointments</h4>
 			</div>
 			<div class="panel-body">
 				<% @stylists.each do |stylist| %>
 					
-					<% stylist.appointments.each do |appointment| %>
+					<% stylist.appointments.each do |appointment|  %>
 						<div class="row">
 							<div class="col-md-3">
-								<%= appointment.start_date.strftime('%B %d, %Y %l:%M %P') %>
+								<%= appointment.start_date.strftime('%A, %B %d, %Y %l:%M %P') %>
 							</div>	
 							<div class="col-md-6">
 								<%= link_to user_path(appointment.user) do %>
@@ -27,7 +27,7 @@
 								<% end %>	
 							</div>	
 							<div class="col-md-3 right">
-								<h4>appointment.total to go here %></h4>
+								<h4>appointment.total to go here</h4>
 							</div>	
 						</div>
 						<hr>
