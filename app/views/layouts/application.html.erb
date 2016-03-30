@@ -25,8 +25,19 @@
 	        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	    <![endif]-->
+		  
+	</head>
+	<body>
 
-	    <!-- Anti-Click Jacking Script Start -->
+		<%= render 'shared/navbar' %>
+		<%= render 'shared/alerts' %>
+		
+			<%= yield %>
+		
+		<%= render 'shared/footer' %>
+	</body>
+
+	 <!-- Anti-Click Jacking Script Start -->
 		    
 		    <script>
 			  if (self == top) {
@@ -68,15 +79,7 @@
 			<script src="//load.sumome.com/" data-sumo-site-id="3dd473ba693e6a1de3ba572d3cd50d51538b134c2f7ff1afc0aa9ba9af5e0c8c" async="async"></script>
 
 		<!-- End SumoMe -->
-		  
-	</head>
-	<body>
 
-		<%= render 'shared/navbar' %>
-		<%= render 'shared/alerts' %>
-		
-			<%= yield %>
-		
-		<%= render 'shared/footer' %>
-	</body>
+
+	
 </html>
