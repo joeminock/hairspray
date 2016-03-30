@@ -1,13 +1,8 @@
 class Stylist < ActiveRecord::Base
 	extend FriendlyId
-	friendly_id :slug_candidates, use: :slugged
+	friendly_id :stylist_name, use: [:slugged, :finders]
 
-		def slug_candidates
-		    [:stylist_name, :salon_name,
-		      [:stylist_name, :salon_name, :salon_phone ]
-		    ]
-		end
-	    #Need to create method for changing URL if stylist changes information
+    #Need to create method for changing URL if stylist changes information
   	
 
 	belongs_to :user
