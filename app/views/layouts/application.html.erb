@@ -26,6 +26,20 @@
 	        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	    <![endif]-->
 
+	    <!-- Anti-Click Jacking Script Start -->
+		    
+		    <script>
+			  if (self == top) {
+			    // Everything checks out, show the page.
+			    document.documentElement.style.display = 'block';
+			  } else {
+			    // Break out of the frame.
+			    top.location = self.location;
+			  }
+			</script>
+
+		<!-- Anti-Click Jacking Script End -->
+
 	    <!-- Google Analytics Start -->
 
 	    <script>
