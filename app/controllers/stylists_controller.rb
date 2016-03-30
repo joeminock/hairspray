@@ -58,10 +58,10 @@ class StylistsController < ApplicationController
 
   private
     def set_stylist
-      @stylist = Stylist.find(params[:id])
+      @stylist = Stylist.friendly.find(params[:id])
     end
 
     def stylist_params
-      params.require(:stylist).permit(:stylist_name, :about_the_stylist, :services_provided, :address, :works_in_salon, :works_in_office, :works_in_home, :primary_title, :salon_name, :short_intro, :salon_phone, :facebook_link, :twitter_link, :instagram_link, :snapchat_link, :email_link, :website_link, :price, :active)
+      params.require(:stylist).permit(:stylist_name, :about_the_stylist, :services_provided, :address, :works_in_salon, :works_in_office, :works_in_home, :primary_title, :salon_name, :short_intro, :salon_phone, :facebook_link, :twitter_link, :instagram_link, :snapchat_link, :email_link, :website_link, :price, :active, :slug)
     end
 end

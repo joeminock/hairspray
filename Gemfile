@@ -28,7 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #USER AUTHENTICATION
 #devise
-gem 'devise', '~> 3.5', '>= 3.5.6'
+gem 'devise', '~> 3.5', '>= 3.5.3'
 
 #IMAGE MANAGEMENT
 gem 'paperclip'
@@ -43,6 +43,11 @@ gem 'ransack'
 
 #AWS IMAGE STORE
 gem 'aws-sdk', '~> 1'
+
+#CLEAN URLS
+gem 'friendly_id', '~> 5.1'
+
+
 
 # PRODUCTION ENV
 group :production do 
@@ -71,6 +76,9 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  #BETTER ERRORS AND TROUBLESHOOTING
+gem 'better_errors', '~> 2.1', '>= 2.1.1'
+gem 'binding_of_caller', '~> 0.7.2'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
