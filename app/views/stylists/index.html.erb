@@ -14,22 +14,20 @@
 				</div>
 					
 				<% @stylists.each do |stylist| %>
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-md-2">
-							<h4><%= image_tag stylist.photos[0].image.url(:thumb) if stylist.photos.length > 0 %></h4>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-2">
+								<h4><%= image_tag stylist.photos[0].image.url(:thumb) if stylist.photos.length > 0 %></h4>
+							</div>
+							<div class="col-md-7">
+								<h4><%= stylist.stylist_name %></h4>
+							</div>		
+							<div class="col-md-3 right">
+								<%= link_to "Update", edit_stylist_path(stylist), class: "btn btn-primary" %>
+							</div>		
 						</div>
-						<div class="col-md-7">
-							<h4><%= stylist.stylist_name %></h4>
-						</div>		
-						<div class="col-md-3 right">
-							<%= link_to "Update", edit_stylist_path(stylist), class: "btn btn-primary" %>
-						</div>		
 					</div>
-				</div>
 				<% end %>
-
-				
 			</div>
 		</div>
 	</div>
