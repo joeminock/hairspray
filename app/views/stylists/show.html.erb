@@ -123,7 +123,7 @@
 			<div class="row">
 				<% for stylist in @stylist.nearbys(10).max(6).shuffle %>
 					
-					<div class="col-sm-4">
+					<div class="col-sm-4 col-md-4">
 						<div class="panel panel-default">
 							<%= link_to stylist_path(stylist) do %>
 							<div class="panel-heading preview">
