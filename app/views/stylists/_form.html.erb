@@ -1,3 +1,17 @@
+<script>
+	$(document).ready(function() {
+	    var text_max = 99;
+	    $('#stylistname-count').html(text_max + ' characters remaining');
+
+	    $('#stylistname').keyup(function() {
+	        var text_length = $('#stylistname').val().length;
+	        var text_remaining = text_max - text_length;
+
+	        $('#stylistname-count').html(text_remaining + ' characters remaining');
+	    });
+	});
+</script>
+
 <div class="panel panel-default">
 	<div class="panel-heading">
 		Create your Stylist Profile!!!
@@ -113,14 +127,6 @@
 	</div>
 </div>
 
-<script>
-	var text_max = 75;
-	$('#stylistname-count').html(text_max + ' remaining');
 
-	$('#stylistname').keyup(function() {
-	  var text_length = $('#stylistname').val().length;
-	  var text_remaining = text_max - text_length;
-	  
-	  $('#count_message').html(text_remaining + ' remaining');
-});
-</script>
+
+
