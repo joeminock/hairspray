@@ -24,9 +24,12 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.fullname %> <span class="caret"></span></a>
 
                         <ul class="dropdown-menu">
-                          <li><%= link_to "My Account Settings", edit_user_registration_path %></li>
+                          <li><%= link_to "My Appointments", my_appointments_path %></li>
+                          <li><a href="#">Favorite Stylists</a></li>
+                          <li><%= link_to "Account Settings", edit_user_registration_path %></li>
                           <li role="separator" class="divider"></li>
-                          <li><%= link_to "My Stylist Profiles", stylists_path %></li>
+                          <li><%= link_to "Become a Stylist", new_stylist_path %></li>
+                          <li><%= link_to "My Stylist Profile", stylists_path %></li>
                           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
                         </ul>
                       </li>
