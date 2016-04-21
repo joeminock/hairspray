@@ -14,49 +14,27 @@
 				
 				
 				<div class="row">
-				<div class="col-sm-12"><h3>Search Results</h3></div>
-				<% @arrStylists.each do |stylist| %>
-					
-					<div class="col-sm-6 col-md-4">
-						<div class="panel panel-default">
-							<%= link_to stylist_path(stylist) do %>
-								<div class="panel-heading preview">
-									<%= image_tag stylist.photos[0].image.url(:medium) if stylist.photos.length > 0 %>
-								</div>
-								<div class="panel-body">
-									
-										<%= stylist.stylist_name %>
-										at
-										<%= stylist.salon_name %>	
-								</div>
-							<% end %>
-							
+					<div class="col-sm-12"><h3>Search Results</h3></div>
+					<% @arrStylists.each do |stylist| %>
+						
+						<div class="col-sm-6 col-md-4">
+							<div class="panel panel-default">
+								<%= link_to stylist_path(stylist) do %>
+									<div class="panel-heading preview">
+										<%= image_tag stylist.photos[0].image.url(:medium) if stylist.photos.length > 0 %>
+									</div>
+									<div class="panel-body">
+										
+											<%= stylist.stylist_name %>
+											at
+											<%= stylist.salon_name %>	
+									</div>
+								<% end %>
+								
+							</div>
 						</div>
-					</div>
 
-				<% end %>
-				</div>
-
-			
-
-				<div class="row">
-					<div class="col-sm-12"><h4>Refine Your Search</h4></div>
-					<div class="col-md-3">
-						<%= text_field_tag :start_time, params[:start_time], placeholder: "Start Time", class: "form-control" %>
-					</div>
-					<div class="col-md-3">
-						<%= text_field_tag :end_time, params[:end_time], placeholder: "End Time", class: "form-control" %>
-					</div>
-					<div class="col-md-3">
-						<%= f.text_field :price_gteq, placeholder: "Min Price", class: "form-control" %>
-					</div>
-					<div class="col-md-3">
-						<%= f.text_field :price_lteq, placeholder: "Max Price", class: "form-control" %>
-					</div>
-				</div>
-				<br>
-				<div class="row">
-					<%= f.submit "Search", class: "btn btn-primary" %>
+					<% end %>
 				</div>
 
 			<% end %>
