@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   #Pages
   get '/about' => 'pages#about_us'
-  get '/become_a_stylist' => 'pages#become_a_stylist'
+  get '/for_stylists' => 'pages#for_stylists'
   get '/media' => 'pages#media'
   get '/jobs' => 'pages#jobs'
   get '/contact' => 'pages#contact'

@@ -45,7 +45,7 @@ class PagesController < ApplicationController
     end
   end
 
-  def become_a_stylist
+  def for_stylists
   end
 
   def about
