@@ -6,12 +6,12 @@ class Stylist < ActiveRecord::Base
 
 	  def slug_candidates
 	   [
-	    [:stylist_name, :salon_name],
+	    [:stylist_name, :salon_name, :city, :state],
 	   ]
 	  end
 
 	  def should_generate_new_friendly_id?
-		stylist_name_changed? || salon_name_changed?
+		stylist_name_changed? || salon_name_changed? || city_changed? || state_changed?
 	  end
   	
 
