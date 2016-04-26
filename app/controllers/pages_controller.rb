@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-  	@stylists = Stylist.all.shuffle
+  	@stylists = Stylist.where(active: true).limit(15).order('RANDOM()')  #fixed per Steve's recommendation. Gets stylist profiles that are active, then randomizes
   end
 
   def search
