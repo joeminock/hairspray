@@ -6,4 +6,18 @@ class Photo < ActiveRecord::Base
   						content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] },
   						size: { in: 0..6144.kilobytes }	
   									# content_type: /\Aimage\/.*\Z/
+
+
+  LIMIT = 3
+
+  validate do |record|
+	record.validate_photo_quota
+  end
+
+  def validate_photo_quota
+	return unless self.stylist
+	if self.stylist.photos(:reload).count >= LIMIT
+	   errors.add(:base, :exceeded_quota)
+	end
+  end
 end
