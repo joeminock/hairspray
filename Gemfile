@@ -57,6 +57,8 @@ group :production do
 	gem 'rails_12factor'
 	#Heroku Server
 	gem 'puma'
+  #New Relic
+  gem 'newrelic_rpm', '~> 3.15', '>= 3.15.2.317'
 end
 
 # Use ActiveModel has_secure_password
