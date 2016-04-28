@@ -7,7 +7,7 @@ class Photo < ActiveRecord::Base
   						size: { in: 0..6144.kilobytes }	
   									# content_type: /\Aimage\/.*\Z/
 
-
+  #limits stylist profile to 3 images. 
   LIMIT = 3
 
   validate do |record|
