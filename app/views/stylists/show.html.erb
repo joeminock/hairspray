@@ -42,25 +42,25 @@
 					
 					<hr>
 					<ul class="social-network social-circle">
-						<% if @stylist.stylist_website.size > 1 %>
+						<% if @stylist.stylist_website != nil && @stylist.stylist_website != "" %>
 							<li><a href="<%= @stylist.stylist_website %>/?utm_source=GoToStylist" target="_blank" class="icoRss" title="Website"><i class="fa fa-globe"></i></a></li>
 						<% end %>
 
-						<% if @stylist.stylist_facebook.size > 1 %>
+						<% if @stylist.stylist_facebook != nil && @stylist.stylist_facebook != "" %>
                         	<li><a href="<%= @stylist.stylist_facebook %>/?utm_source=GoToStylist" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                         <% end %>
 
-						<% if @stylist.stylist_twitter.size > 1 %>
+						<% if @stylist.stylist_twitter != nil && @stylist.stylist_twitter != "" %>
                         	<li><a href="<%= @stylist.stylist_twitter %>/?utm_source=GoToStylist" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
                         <% end %>
 
-                        <% if @stylist.stylist_instagram.size > 1%>
+                        <% if @stylist.stylist_instagram != nil && @stylist.stylist_instagram != "" %>
                         	<li><a href="<%= @stylist.stylist_instagram %>/?utm_source=GoToStylist" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
                         <% end %>
 
                         <!-- periscope to go here when icon is available -->
 
-                        <% if @stylist.stylist_pinterest.size > 1 %>
+                        <% if @stylist.stylist_pinterest != nil && @stylist.stylist_pinterest != "" %>
                         	<li><a href="<%= @stylist.stylist_pinterest %>/?utm_source=GoToStylist" class="icoPinterest" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
                         <% end %>
 
@@ -111,10 +111,10 @@
 			<!-- Google Map -->
 			<div class="row">
 				<div class="col-md-12">
-					<h2><%= @stylist.salon_name.size > 1 %>
+					<h2><%= @stylist.salon_name %>
 					<h3 class="salon_name"><%= @stylist.address %> - <%= @stylist.salon_phone %></h3>
 					
-					<% if @stylist.salon_website %>
+					<% if @stylist.salon_website != nil && @stylist.salon_website != "" %>
 						<h5><a href="<%= @stylist.salon_website %>/?utm_source=GoToStylist" target="_blank" class="stylist_salon_website"><%= @stylist.salon_website %></a></h5>
 					<% end %>
 						<!-- additional links to go here -->
