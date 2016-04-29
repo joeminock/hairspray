@@ -247,6 +247,10 @@ h6 {
   font-size: 20px;
 }
 
+.stylist_salon_website {
+  margin-top: -35px;
+}
+
 /*=========================
   Icons
  ================= */
@@ -289,8 +293,14 @@ ul.social-network li {
 .social-network a.icoLinkedin:hover {
   background-color:#007bb7;
 }
+.social-network a.icoPinterest:hover {
+  background-color:#e3262e;
+}
+.social-network a.icoSnapchat:hover {
+  background-color:#fffc00;
+}
 .social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
-.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i, .social-network a.icoPinterest:hover i, .social-network a.icoSnapchat:hover i  {
   color:#fff;
 }
 a.socialIcon:hover, .socialHoverClass {
@@ -338,6 +348,18 @@ a.socialIcon:hover, .socialHoverClass {
 .social-network  a {
  background-color: #D3D3D3;   
 }
+
+ul.salon_links {
+  list-style: none;
+  display: inline;
+  margin-left:0 !important;
+  padding: 0;
+}
+ul.salon_links li {
+  display: inline;
+ 
+}
+
 
 /* SEARCH PAGE */
 

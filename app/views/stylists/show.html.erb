@@ -42,13 +42,34 @@
 					
 					<hr>
 					<ul class="social-network social-circle">
-                        <li><a href="<%= @stylist.stylist_website %>/?utm_source=GoToStylist" target="_blank" class="icoRss" title="Website"><i class="fa fa-globe"></i></a></li>
-                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+						<% if @stylist.stylist_website.size > 1 %>
+							<li><a href="<%= @stylist.stylist_website %>/?utm_source=GoToStylist" target="_blank" class="icoRss" title="Website"><i class="fa fa-globe"></i></a></li>
+						<% end %>
+
+						<% if @stylist.stylist_facebook.size > 1 %>
+                        	<li><a href="<%= @stylist.stylist_facebook %>/?utm_source=GoToStylist" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <% end %>
+
+						<% if @stylist.stylist_twitter.size > 1 %>
+                        	<li><a href="<%= @stylist.stylist_twitter %>/?utm_source=GoToStylist" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <% end %>
+
+                        <% if @stylist.stylist_instagram.size > 1%>
+                        	<li><a href="<%= @stylist.stylist_instagram %>/?utm_source=GoToStylist" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                        <% end %>
+
+                        <!-- periscope to go here when icon is available -->
+
+                        <% if @stylist.stylist_pinterest.size > 1 %>
+                        	<li><a href="<%= @stylist.stylist_pinterest %>/?utm_source=GoToStylist" class="icoPinterest" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                        <% end %>
+
+                        <!-- snapchat to go here when icon is available -->
+
+                        <!-- youtube to go here -->
+                        <!--<li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
                         <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-                         <li><a href="#" class="icoYouTube" title="YouTube"><i class="fa fa-youtube-play"></i></a></li>
+                        <li><a href="#" class="icoYouTube" title="YouTube"><i class="fa fa-youtube-play"></i></a></li>-->
                     </ul>
 
 				</div>
@@ -90,8 +111,14 @@
 			<!-- Google Map -->
 			<div class="row">
 				<div class="col-md-12">
-					<h2><%= @stylist.salon_name %>
+					<h2><%= @stylist.salon_name.size > 1 %>
 					<h3 class="salon_name"><%= @stylist.address %> - <%= @stylist.salon_phone %></h3>
+					
+					<% if @stylist.salon_website %>
+						<h5><a href="<%= @stylist.salon_website %>/?utm_source=GoToStylist" target="_blank" class="stylist_salon_website"><%= @stylist.salon_website %></a></h5>
+					<% end %>
+						<!-- additional links to go here -->
+
 				</div>
 			</div>
 			<div class="row">
@@ -131,7 +158,7 @@
 				</div>
 			</div>
 
-			<!-- Close by Rooms -->
+			<!-- Close by Stylists -->
 			<h3>More Great Stylists Near by</h3>
 			<div class="row">
 				<% for stylist in @stylist.nearbys(10).max(6).shuffle %>
