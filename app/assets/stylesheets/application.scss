@@ -268,6 +268,12 @@ ul.social-network li {
 .social-network a.icoRss:hover {
   background-color: #F56505;
 }
+.social-network a.icoYouTube:hover {
+  background-color: #BB0000;
+}
+.social-network a.icoInstagram:hover {
+    background-color: #125688;
+}
 .social-network a.icoFacebook:hover {
   background-color:#3B5998;
 }
@@ -329,9 +335,9 @@ a.socialIcon:hover, .socialHoverClass {
   transition: all 0.8s;
 }
 
-/* a {
+.social-network  a {
  background-color: #D3D3D3;   
-} */
+}
 
 /* SEARCH PAGE */
 
