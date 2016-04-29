@@ -62,6 +62,6 @@ class StylistsController < ApplicationController
     end
 
     def stylist_params
-      params.require(:stylist).permit(:stylist_name, :about_the_stylist, :services_provided, :address, :works_in_salon, :works_in_office, :works_in_home, :primary_title, :salon_name, :short_intro, :salon_phone, :facebook_link, :twitter_link, :instagram_link, :snapchat_link, :email_link, :website_link, :price, :active, :slug, :city, :state)
+      params.require(:stylist).permit(:stylist_name, :about_the_stylist, :services_provided, :address, :works_in_salon, :works_in_office, :works_in_home, :primary_title, :salon_name, :short_intro, :salon_phone, :facebook_link, :twitter_link, :instagram_link, :snapchat_link, :email_link, :website_link, :price, :active, :slug, :city, :state, :salon_website, :salon_facebook, :stylist_website, :stylist_facebook, :stylist_twitter, :stylist_instagram, :stylist_periscope, :stylist_pinterest, :stylist_snapchat)
     end
 end

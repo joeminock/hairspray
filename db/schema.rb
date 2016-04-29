@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423233926) do
+ActiveRecord::Schema.define(version: 20160429012814) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer  "user_id"
@@ -78,6 +78,15 @@ ActiveRecord::Schema.define(version: 20160423233926) do
     t.string   "slug"
     t.string   "city"
     t.string   "state"
+    t.string   "salon_website"
+    t.string   "salon_facebook"
+    t.string   "stylist_website"
+    t.string   "stylist_facebook"
+    t.string   "stylist_twitter"
+    t.string   "stylist_instagram"
+    t.string   "stylist_periscope"
+    t.string   "stylist_pinterest"
+    t.string   "stylist_snapchat"
   end
 
   add_index "stylists", ["slug"], name: "index_stylists_on_slug", unique: true
