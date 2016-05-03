@@ -107,7 +107,7 @@
 							<a data-target="#portfolio" data-toggle="tab" class="stylist_intro">Portfolio Images</a>
 						</li>
 						<li>
-							<a data-target="#salon" data-toggle="tab" class="stylist_intro">Salon Info</a>
+							<a data-target="#salon" data-toggle="tab" class="stylist_intro" id="salon_tab">Salon Info</a>
 						</li>
 					</ul>
 
@@ -146,7 +146,7 @@
 								<span class="sr-only">Next</span>
 							</a>
 						   </div>
-						
+
 						</div>
 						<!-- Portfolio Images Tab End -->
 
@@ -174,35 +174,6 @@
 
 							<div id="map"></div>
 
-							<style>
-								#map {
-									width: 100%;
-									height: 400px;
-								}
-
-							</style>
-
-							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKwBQ2vhFaNW7twSfB15rS0SFopJe5qjc"></script>
-							<script>
-								function initialize() {
-									var mapCanvas = document.getElementById('map');
-									var mapOptions = {
-										center: new google.maps.LatLng(<%= @stylist.latitude %>, <%= @stylist.longitude %>),
-										zoom: 15,
-										mapTypeId: google.maps.MapTypeId.ROADMAP
-									}
-									var map = new google.maps.Map(mapCanvas, mapOptions);
-
-									var marker = new google.maps.Marker({
-										position: new google.maps.LatLng(<%= @stylist.latitude %>, <%= @stylist.longitude %>),
-										title: "GoToStylist"
-									});
-
-									marker.setMap(map);
-								}
-								google.maps.event.addDomListener(window, 'load', initialize);
-							</script>
-
 						</div>
 					</div>
 
@@ -216,12 +187,12 @@
 					</div>
 
 
-					
-						
+
+
 					</div>
 				</div>
 				<hr>
-				
+
 
 					<!-- Close by Stylists -->
 					<h3>More Great Stylists Near by</h3>
@@ -253,3 +224,25 @@
 				</div>
 			</div>
 		</div>
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKwBQ2vhFaNW7twSfB15rS0SFopJe5qjc"></script>
+							<script>
+                var mapCanvas = document.getElementById('map');
+								function initialize() {
+									var mapOptions = {
+										center: new google.maps.LatLng(<%= @stylist.latitude %>, <%= @stylist.longitude %>),
+										zoom: 15,
+										mapTypeId: google.maps.MapTypeId.ROADMAP
+									}
+									var map = new google.maps.Map(mapCanvas, mapOptions);
+
+									var marker = new google.maps.Marker({
+										position: new google.maps.LatLng(<%= @stylist.latitude %>, <%= @stylist.longitude %>),
+										title: "GoToStylist"
+									});
+
+									marker.setMap(map);
+								}
+								google.maps.event.addDomListener(document.getElementById('salon_tab'), 'click', initialize);
+
+							</script>
