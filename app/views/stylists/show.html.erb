@@ -227,8 +227,10 @@
 
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKwBQ2vhFaNW7twSfB15rS0SFopJe5qjc"></script>
 							<script>
-                var mapCanvas = document.getElementById('map');
+
 								function initialize() {
+                  google.maps.event.removeListener(listener1);
+                  var mapCanvas = document.getElementById('map');
 									var mapOptions = {
 										center: new google.maps.LatLng(<%= @stylist.latitude %>, <%= @stylist.longitude %>),
 										zoom: 15,
@@ -243,6 +245,6 @@
 
 									marker.setMap(map);
 								}
-								google.maps.event.addDomListener(document.getElementById('salon_tab'), 'click', initialize);
+								var listener1 = google.maps.event.addDomListener(document.getElementById('salon_tab'), 'click', initialize);
 
 							</script>
