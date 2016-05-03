@@ -104,10 +104,10 @@
 
 					<ul class="nav nav-tabs" id="myTab">
 						<li class="active">
-							<a data-target="#portfolio" data-toggle="tab">Portfolio Images</a>
+							<a data-target="#portfolio" data-toggle="tab" class="stylist_intro">Portfolio Images</a>
 						</li>
 						<li>
-							<a data-target="#salon" data-toggle="tab">Salon Info</a>
+							<a data-target="#salon" data-toggle="tab" class="stylist_intro">Salon Info</a>
 						</li>
 					</ul>
 
@@ -115,6 +115,7 @@
 					<!-- Portfolio Images Tab Start -->
 					<div class="tab-content">
 			  			<div class="tab-pane active" id="portfolio">
+			  				<br>
 			  				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 							<% if @photos %>
@@ -181,7 +182,7 @@
 
 							</style>
 
-							<script src="https://maps.googleapis.com/maps/api/js"></script>
+							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKwBQ2vhFaNW7twSfB15rS0SFopJe5qjc"></script>
 							<script>
 								function initialize() {
 									var mapCanvas = document.getElementById('map');
