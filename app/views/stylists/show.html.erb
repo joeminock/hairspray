@@ -47,7 +47,7 @@
                     <ul class="social-network social-circle">
                         <% if @stylist.stylist_website != nil && @stylist.stylist_website != "" %>
                         <li>
-                            <a href="<%= @stylist.stylist_website %>/?utm_source=GoToStylist" target="_blank" rel="noopener noreferrer" class="icoRss" title="Website">
+                            <a href="<%= @stylist.stylist_website %>/?ref=gotostylist" target="_blank" rel="noopener noreferrer" class="icoRss" title="Website">
                                 <i class="fa fa-globe"></i>
                             </a>
                         </li>
@@ -55,7 +55,7 @@
 
                         <% if @stylist.stylist_facebook != nil && @stylist.stylist_facebook != "" %>
                         <li>
-                            <a href="<%= @stylist.stylist_facebook %>/?utm_source=GoToStylist" target="_blank" rel="noopener noreferrer" class="icoFacebook" title="Facebook">
+                            <a href="<%= @stylist.stylist_facebook %>/?ref=gotostylist" target="_blank" rel="noopener noreferrer" class="icoFacebook" title="Facebook">
                                 <i class="fa fa-facebook"></i>
                             </a>
                         </li>
@@ -63,7 +63,7 @@
 
                         <% if @stylist.stylist_twitter != nil && @stylist.stylist_twitter != "" %>
                         <li>
-                            <a href="<%= @stylist.stylist_twitter %>/?utm_source=GoToStylist" target="_blank" rel="noopener noreferrer" class="icoTwitter" title="Twitter">
+                            <a href="<%= @stylist.stylist_twitter %>/?ref=gotostylist" target="_blank" rel="noopener noreferrer" class="icoTwitter" title="Twitter">
                                 <i class="fa fa-twitter"></i>
                             </a>
                         </li>
@@ -71,7 +71,7 @@
 
                         <% if @stylist.stylist_instagram != nil && @stylist.stylist_instagram != "" %>
                         <li>
-                            <a href="<%= @stylist.stylist_instagram %>/?utm_source=GoToStylist" target="_blank" rel="noopener noreferrer" class="icoInstagram" title="Instagram">
+                            <a href="<%= @stylist.stylist_instagram %>/?ref=gotostylist" target="_blank" rel="noopener noreferrer" class="icoInstagram" title="Instagram">
                                 <i class="fa fa-instagram"></i>
                             </a>
                         </li>
@@ -81,7 +81,7 @@
 
                         <% if @stylist.stylist_pinterest != nil && @stylist.stylist_pinterest != "" %>
                         <li>
-                            <a href="<%= @stylist.stylist_pinterest %>/?utm_source=GoToStylist" target="_blank" rel="noopener noreferrer" class="icoPinterest" title="Pinterest">
+                            <a href="<%= @stylist.stylist_pinterest %>/?ref=gotostylist" target="_blank" rel="noopener noreferrer" class="icoPinterest" title="Pinterest">
                                 <i class="fa fa-pinterest"></i>
                             </a>
                         </li>
@@ -158,7 +158,7 @@
 
                                         <% if @stylist.salon_website != nil && @stylist.salon_website != "" %>
                                         <h5>
-                                            <a href="<%= @stylist.salon_website %>/?utm_source=GoToStylist" target="_blank" rel="noopener noreferrer" class="stylist_salon_website"><%= @stylist.salon_website %></a>
+                                            <a href="<%= @stylist.salon_website %>/?ref=gotostylist" target="_blank" rel="noopener noreferrer" class="stylist_salon_website"><%= @stylist.salon_website %></a>
                                         </h5>
                                         <% end %>
                                         <!-- additional links to go here -->
