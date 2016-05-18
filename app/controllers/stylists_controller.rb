@@ -1,6 +1,6 @@
 class StylistsController < ApplicationController
   before_action :set_stylist, only: [:show, :edit, :update]
-  before_action :authenticate_user!, except: [:show] 
+  before_action :authenticate_user!, except: [:show]
 
   def index
     @stylists = current_user.stylists
@@ -19,7 +19,7 @@ class StylistsController < ApplicationController
 
     if @stylist.save
 
-      if params[:images] 
+      if params[:images]
         params[:images].each do |image|
           @stylist.photos.create(image: image)
         end
@@ -34,7 +34,7 @@ class StylistsController < ApplicationController
 
   def edit
     if current_user.id == @stylist.user.id
-      
+
       @photos = @stylist.photos
     else
       redirect_to root_path, notice: "You don't have permission."
@@ -44,7 +44,7 @@ class StylistsController < ApplicationController
   def update
     if @stylist.update(stylist_params)
 
-      if params[:images] 
+      if params[:images]
         params[:images].each do |image|
           @stylist.photos.create(image: image)
         end
@@ -56,9 +56,16 @@ class StylistsController < ApplicationController
     end
   end
 
+  def destroy
+    @stylist = Stylist.friendly.find(params[:id])
+    @stylist.destroy
+
+    redirect_to stylists_path
+  end
+
   private
     def set_stylist
-      @stylist = Stylist.friendly.find(params[:id])
+      @stylist = Stylist.friendly.find(params[:id]) #@stylist = Stylist.friendly.find(params[:id])
     end
 
     def stylist_params

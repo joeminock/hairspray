@@ -5,7 +5,7 @@
 				<div class="panel-heading">
 					<h4>My Stylist Profiles</h4>
 				</div>
-					
+
 				<% @stylists.each do |stylist| %>
 					<div class="panel-body">
 						<div class="row">
@@ -14,13 +14,15 @@
 							</div>
 							<div class="col-md-7">
 								<h4><%= stylist.stylist_name %></h4>
-							</div>		
+							</div>
 							<div class="col-md-3 right">
 								<%= link_to "Update", edit_stylist_path(stylist), class: "btn btn-primary" %>
-							</div>		
+								<%= link_to "Delete", stylist_path(stylist), method: :delete, data: {confirm: "Deletions are permanent, are you sure you'd like to proceed?"}, class: "btn btn-primary" %>
+							</div>
 						</div>
 					</div>
 				<% end %>
+				<%= link_to "Create a New Stylist Profile", new_stylist_path, class: "btn btn-primary green" %>
 			</div>
 		</div>
 	</div>

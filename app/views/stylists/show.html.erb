@@ -1,6 +1,9 @@
 <% content_for :head do %>
 <title><%= @stylist.primary_title %>
-    <%= @stylist.stylist_name %>, <%= @stylist.salon_name %>, <%= @stylist.city %>, <%= @stylist.state %></title>
+	<%= @stylist.stylist_name %>,
+	<%= @stylist.salon_name %>
+	-
+	<%= @stylist.salon_phone %></title>
 <meta name="description" content="<%= @stylist.short_intro %>"/>
 
 <!-- Twitter Card data -->
@@ -21,216 +24,226 @@
 <% end %>
 
 <div class="container">
-    <div class="panel panel-default">
-        <div class="panel-body">
+	<div class="panel panel-default">
+		<div class="panel-body">
 
-            <!-- Image -->
-            <div class="row">
-                <div class="col-md-4">
-                    <h1 class="stylist_title"><%= @stylist.primary_title %></h1>
-                    <h1 class="stylist_name"><%= @stylist.stylist_name %></h1>
-                    <h1 class="salon_name">at
-                        <%= @stylist.salon_name %></h1>
-                    <h1 class="salon_name"><%= @stylist.salon_phone %></h1>
-                    <hr>
-                    <h2 class="stylist_intro"><%= @stylist.short_intro %></h2>
-                    <p class="normal"><%= @stylist.about_the_stylist %></p>
+			<!-- Image -->
+			<div class="row">
+				<div class="col-md-4">
+					<h1 class="stylist_title"><%= @stylist.primary_title %></h1>
+					<h1 class="stylist_name"><%= @stylist.stylist_name %></h1>
+					<h1 class="salon_name">at
+						<%= @stylist.salon_name %></h1>
+					<h1 class="salon_name"><%= @stylist.salon_phone %></h1>
+					<hr>
+					<h2 class="stylist_intro"><%= @stylist.short_intro %></h2>
+					<p class="normal"><%= @stylist.about_the_stylist %></p>
 
-                    <!-- <hr> -->
+					<!-- <hr> -->
 
-                    <h4>Services:
-                        <%= @stylist.services_provided %></h4>
-                    <!-- <hr> -->
-                    <!-- Service and Appointment Form to Go Here -->
+					<h4>Services:
+						<%= @stylist.services_provided %></h4>
+					<!-- <hr> -->
+					<!-- Service and Appointment Form to Go Here -->
 
-                    <hr>
-                    <ul class="social-network social-circle">
-                        <% if @stylist.stylist_website != nil && @stylist.stylist_website != "" %>
-                        <li>
-                            <a href="<%= @stylist.stylist_website %>/?ref=gotostylist" target="_blank" rel="noopener noreferrer" class="icoRss" title="Website">
-                                <i class="fa fa-globe"></i>
-                            </a>
-                        </li>
-                        <% end %>
+					<hr>
+					<ul class="social-network social-circle">
+						<% if @stylist.stylist_website != nil && @stylist.stylist_website != "" %>
+						<li>
+							<a href="<%= @stylist.stylist_website %>/?utm_source=GoToStylist" target="_blank" class="icoRss" title="Website">
+								<i class="fa fa-globe"></i>
+							</a>
+						</li>
+						<% end %>
 
-                        <% if @stylist.stylist_facebook != nil && @stylist.stylist_facebook != "" %>
-                        <li>
-                            <a href="<%= @stylist.stylist_facebook %>/?ref=gotostylist" target="_blank" rel="noopener noreferrer" class="icoFacebook" title="Facebook">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                        </li>
-                        <% end %>
+						<% if @stylist.stylist_facebook != nil && @stylist.stylist_facebook != "" %>
+						<li>
+							<a href="<%= @stylist.stylist_facebook %>/?utm_source=GoToStylist" target="_blank" class="icoFacebook" title="Facebook">
+								<i class="fa fa-facebook"></i>
+							</a>
+						</li>
+						<% end %>
 
-                        <% if @stylist.stylist_twitter != nil && @stylist.stylist_twitter != "" %>
-                        <li>
-                            <a href="<%= @stylist.stylist_twitter %>/?ref=gotostylist" target="_blank" rel="noopener noreferrer" class="icoTwitter" title="Twitter">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                        </li>
-                        <% end %>
+						<% if @stylist.stylist_twitter != nil && @stylist.stylist_twitter != "" %>
+						<li>
+							<a href="<%= @stylist.stylist_twitter %>/?utm_source=GoToStylist" target="_blank" class="icoTwitter" title="Twitter">
+								<i class="fa fa-twitter"></i>
+							</a>
+						</li>
+						<% end %>
 
-                        <% if @stylist.stylist_instagram != nil && @stylist.stylist_instagram != "" %>
-                        <li>
-                            <a href="<%= @stylist.stylist_instagram %>/?ref=gotostylist" target="_blank" rel="noopener noreferrer" class="icoInstagram" title="Instagram">
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </li>
-                        <% end %>
+						<% if @stylist.stylist_instagram != nil && @stylist.stylist_instagram != "" %>
+						<li>
+							<a href="<%= @stylist.stylist_instagram %>/?utm_source=GoToStylist" target="_blank" class="icoInstagram" title="Instagram">
+								<i class="fa fa-instagram"></i>
+							</a>
+						</li>
+						<% end %>
 
-                        <!-- periscope to go here when icon is available -->
+						<!-- periscope to go here when icon is available -->
 
-                        <% if @stylist.stylist_pinterest != nil && @stylist.stylist_pinterest != "" %>
-                        <li>
-                            <a href="<%= @stylist.stylist_pinterest %>/?ref=gotostylist" target="_blank" rel="noopener noreferrer" class="icoPinterest" title="Pinterest">
-                                <i class="fa fa-pinterest"></i>
-                            </a>
-                        </li>
-                        <% end %>
+						<% if @stylist.stylist_pinterest != nil && @stylist.stylist_pinterest != "" %>
+						<li>
+							<a href="<%= @stylist.stylist_pinterest %>/?utm_source=GoToStylist" target="_blank" class="icoPinterest" title="Pinterest">
+								<i class="fa fa-pinterest"></i>
+							</a>
+						</li>
+						<% end %>
 
-                        <!-- snapchat to go here when icon is available -->
+						<!-- snapchat to go here when icon is available -->
 
-                        <!-- youtube to go here -->
-                        <!--<li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+						<!-- youtube to go here -->
+						<!--<li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
                         <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                         <li><a href="#" class="icoYouTube" title="YouTube"><i class="fa fa-youtube-play"></i></a></li>-->
-                    </ul>
+					</ul>
 
-                </div>
+				</div>
 
-                <div class="col-md-8">
+				<div class="col-md-8">
 
-                    <ul class="nav nav-tabs" id="myTab">
-                        <li class="active">
-                            <a data-target="#portfolio" data-toggle="tab" class="stylist_intro">Portfolio Images</a>
-                        </li>
-                        <li>
-                            <a data-target="#salon" data-toggle="tab" class="stylist_intro" id="salon_tab">Salon Info</a>
-                        </li>
-                    </ul>
+					<ul class="nav nav-tabs" id="myTab">
+						<li class="active">
+							<a data-target="#portfolio" data-toggle="tab" class="stylist_intro">Portfolio Images</a>
+						</li>
+						<li>
+							<a data-target="#salon" data-toggle="tab" class="stylist_intro">Salon Info</a>
+						</li>
+					</ul>
 
-                    <!-- Portfolio Images Tab Start -->
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="portfolio">
-                            <br>
-                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-                                <% if @photos %>
-                                <!-- Indicators -->
-                                <ol class="carousel-indicators">
-                                    <% @photos.each do |photo| %>
-                                    <li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
-                                    <% end %>
-                                </ol>
-                                <% end %>
+					<!-- Portfolio Images Tab Start -->
+					<div class="tab-content">
+			  			<div class="tab-pane active" id="portfolio">
+			  				<br>
+			  				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-                                <div class="carousel-inner" role="listbox">
-                                    <% if @photos %>
-                                    <% @photos.each do |photo| %>
-                                    <div class="item <%= 'active' if photo.id == @photos[0].id %>">
-                                        <%= image_tag photo.image.url() %>
-                                    </div>
-                                    <% end %>
-                                    <% end %>
-                                </div>
+							<% if @photos %>
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<% @photos.each do |photo| %>
+								<li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
+								<% end %>
+							</ol>
+							<% end %>
 
-                                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
+							<div class="carousel-inner" role="listbox">
+								<% if @photos %>
+								<% @photos.each do |photo| %>
+								<div class="item <%= 'active' if photo.id == @photos[0].id %>">
+									<%= image_tag photo.image.url() %>
+								</div>
+								<% end %>
+								<% end %>
+							</div>
 
-                        </div>
-                        <!-- Portfolio Images Tab End -->
+							<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						   </div>
+						
+						</div>
+						<!-- Portfolio Images Tab End -->
 
-                        <!-- Salon Info Tab Start  -->
-                        <div class="tab-pane" id="salon">
-                            <!-- Google Map -->
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h2><%= @stylist.salon_name %>
-                                        <h3 class="salon_name"><%= @stylist.address %>
-                                            -
-                                            <%= @stylist.salon_phone %></h3>
+						<!-- Salon Info Tab Start  -->
+			  			<div class="tab-pane" id="salon">
+			  				<!-- Google Map -->
+				<div class="row">
+					<div class="col-md-12">
+						<h2><%= @stylist.salon_name %>
+							<h3 class="salon_name"><%= @stylist.address %>
+								-
+								<%= @stylist.salon_phone %></h3>
 
-                                        <% if @stylist.salon_website != nil && @stylist.salon_website != "" %>
-                                        <h5>
-                                            <a href="<%= @stylist.salon_website %>/?ref=gotostylist" target="_blank" rel="noopener noreferrer" class="stylist_salon_website"><%= @stylist.salon_website %></a>
-                                        </h5>
-                                        <% end %>
-                                        <!-- additional links to go here -->
+							<% if @stylist.salon_website != nil && @stylist.salon_website != "" %>
+							<h5>
+								<a href="<%= @stylist.salon_website %>/?utm_source=GoToStylist" target="_blank" class="stylist_salon_website"><%= @stylist.salon_website %></a>
+							</h5>
+							<% end %>
+							<!-- additional links to go here -->
 
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
 
-                                        <div id="map"></div>
+							<div id="map"></div>
 
-                                    </div>
-                                </div>
+						</div>
+					</div>
 
-                            </div>
-                            <!-- Salon Info Tab End  -->
-                        </div>
 
-                    </div>
-                </div>
-                <hr>
 
-                <!-- Close by Stylists -->
-                <h3>More Great Stylists Near by</h3>
-                <div class="row">
-                    <% for stylist in @stylist.nearbys(10).max(6).shuffle %>
 
-                    <div class="col-sm-4 col-md-4">
-                        <div class="panel panel-default">
-                            <%= link_to stylist_path(stylist) do %>
-                            <div class="panel-heading preview">
-                                <%= image_tag stylist.photos[0].image.url(:medium) %>
-                            </div>
-                            <div class="panel-body">
 
-                                <%= stylist.stylist_name %>
-                                at
-                                <%= stylist.salon_name %>
 
-                                <% end %>
-                                <br>
-                                (<%= stylist.distance.round(2) %>
-                                miles away)
-                            </div>
-                        </div>
-                    </div>
-                    <% end %>
-                </div>
+			  			</div>
+			  			<!-- Salon Info Tab End  -->
+					</div>
 
-            </div>
-        </div>
-    </div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKwBQ2vhFaNW7twSfB15rS0SFopJe5qjc"></script>
-    <script>
+					
+						
+					</div>
+				</div>
+				<hr>
+				
 
-        function initialize() {
-            google.maps.event.removeListener(listener1);
-            var mapCanvas = document.getElementById('map');
-            var mapOptions = {
-                center: new google.maps.LatLng(<%= @stylist.latitude %>, <%= @stylist.longitude %>),
-                zoom: 15,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            }
-            var map = new google.maps.Map(mapCanvas, mapOptions);
+					<!-- Close by Stylists -->
+					<h3>More Great Stylists Near by</h3>
+					<div class="row">
+						<% for stylist in @stylist.nearbys(10).max(6).shuffle %>
 
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(<%= @stylist.latitude %>, <%= @stylist.longitude %>),
-                title: "GoToStylist"
-            });
+						<div class="col-sm-4 col-md-4">
+							<div class="panel panel-default">
+								<%= link_to stylist_path(stylist) do %>
+								<div class="panel-heading preview">
+									<%= image_tag stylist.photos[0].image.url(:medium) %>
+								</div>
+								<div class="panel-body">
 
-            marker.setMap(map);
-        }
-        var listener1 = google.maps.event.addDomListener(document.getElementById('salon_tab'), 'click', initialize);
-    </script>
+									<%= stylist.stylist_name %>
+									at
+									<%= stylist.salon_name %>
+
+									<% end %>
+									<br>
+									(<%= stylist.distance.round(2) %>
+									miles away)
+								</div>
+							</div>
+						</div>
+						<% end %>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKwBQ2vhFaNW7twSfB15rS0SFopJe5qjc"></script>
+							<script>
+								function initialize() {
+					 
+									var mapCanvas = document.getElementById('map');
+									var mapOptions = {
+										center: new google.maps.LatLng(<%= @stylist.latitude %>, <%= @stylist.longitude %>),
+										zoom: 15,
+										mapTypeId: google.maps.MapTypeId.ROADMAP
+									}
+									var map = new google.maps.Map(mapCanvas, mapOptions);
+
+									var marker = new google.maps.Marker({
+										position: new google.maps.LatLng(<%= @stylist.latitude %>, <%= @stylist.longitude %>),
+										title: "GoToStylist"
+									});
+
+									marker.setMap(map);
+								}
+								google.maps.event.addDomListener(window, 'load', initialize);
+
+							</script>
