@@ -3,10 +3,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+ has_many :stylists
+ has_many :appointments
 
-  validates :fullname, presence:true, :length => {maximum: 50}
+ validates :fullname, presence:true, :length => {maximum: 50}
 
-  has_many :stylists
-  has_many :appointments
+
 
 end
